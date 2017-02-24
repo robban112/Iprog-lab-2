@@ -1,0 +1,250 @@
+<html>
+<head>
+	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/styling.css">
+
+</head>
+<body>
+	<div class="header">
+ 			<div class="side">
+ 				<h1>HOMELETTE </h1> 
+ 			</div>
+ 			<div class="side" style="margin-top:40px;margin-left:40px;">
+ 				<em>From the best chefs in the world directly into your kitchen</em>
+ 			</div>
+ 	</div>
+ 	<div class="row">
+
+	 	<div id = "myDinnerView" class="col-lg-2 col-md-2 col-xs-2" style="padding:0; border-right:solid 1px; height: 100%">
+	 		<div style="margin-left:5%">
+				<p style="margin:auto;text-align:center">My Dinner</p>
+					<div class="side">
+						<p style="width: 75px;margin-left:35px">People</p>
+					</div>
+					<select name="myDropDown" class="side" id="drop">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+
+					<table class="table table-hover" id="myTable">
+						<tr style="background-color: gray">
+							<th>Dish Name</th>
+							<th>Cost</th>
+						</tr>
+						<tr id = "firstRow">
+							<th id ="first">Pending</th>
+							<th id="firstCost">0.00</th>
+						</tr>
+						<tr id = "secondRow">
+							<th id="second">Pending</th>
+							<th id="secondCost">0.00</th>
+						</tr>
+						<tr id="thirdRow">
+							<th id="third">Pending</th>
+							<th id="thirdCost">0.00</th>
+						</tr>
+						<tr>
+							<th>Total cost: </th>
+							<th id="totalMenuCost">SEK 0.00</th>
+						</tr>
+					</table>
+					<button type="button" class="button" style="margin-left:50px; width: 80px;" id="confirmButton">Confirm Dinner</button>
+				</div>
+			</div>
+
+			<!--Filtering view-->
+			<div id = "filteringView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0">
+				<div class="w3-container w3-yellow">
+					<div style="margin-top:1%;margin-bottom:1%">
+						<div style="margin-left:2%"> <h2>SELECT DISH</h2> </div>
+
+						<div class="side" style="margin-left:2%">
+							<input type="text" name="keywords" placeholder="Enter Key Words" id="keyText"></input>
+						</div>
+						<div class="side">
+							<input type="submit" value="search" id="searchButton">
+						</div>
+						<div class="side">
+							<select name="myDropDown" style="width:150px;margin-left: 15%" id="dropDown">
+								<option value="Starter">Starter</option>
+								<option value="Main">Main</option>
+								<option value="Dessert">Dessert</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--Dishes View-->
+			<div id="dishesView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0">
+				<div class = "side" style="margin-top: 10px; margin-left: 10px; padding:1" id="dish">
+                    <div class="select-dish" style="padding:0">
+    					<img src="" id="picture" style="margin-bottom: 5px;width: 160px;height:130px;">
+    					<div class = "w3-container w3-black" style="height:25px; width:160px;">
+    						<p style="text-align: center;"></p>
+    					</div>
+    					<div class = "w3-container" style="padding:3;overflow:scroll;width:160px">
+    						<wbr style="display: inline-block;">
+    						Lorem ipsum dolor sit amet, 
+    						consectetur adipiscing elit. Aenean et ultricies quam.
+    						</wbr>
+    					</div>
+                    </div>
+				</div>
+			</div>
+
+            <!--Overview Header-->
+			<div id="overviewHeaderView" style="padding:0">
+        	 	<div class="header" style="background-color: yellow; border-top:none;height:70px">
+        	 		<div class="row">
+        		 		<div class="col-lg-6 col-md-6 col-xs-6">
+        		 			<h3 style="margin-left: 100px;margin-top: 20px;" id="headerText"></h3>
+        		 		</div>
+        		 		<div class="col-lg-6 col-md-6 col-xs-6">
+        		 			<button class="button" style="margin-right:0;margin-left:60%;margin-top:20px;" id="backAndEditDinnerButton">Go back and edit dinner</button>
+        		 		</div>
+        	 		</div>
+        	 	</div>
+	       </div>
+
+			<!--Dinner overview view-->
+            <div id="dinnerOverviewView" style="margin-top: 80px; margin-left: 320px">
+
+                <div class = "side" style="margin-left: 40px; width: 140px; padding:0" id="starterOverview">
+                <img src="" style="margin-bottom: 5px;width: 140px;height:130px;">
+                <div class = "w3-container w3-black" style="height:40px;">
+                    <p style="text-align: center;"></p>
+                </div>
+                <div class = "w3-container" style="padding:3; text-align: right;">
+                    <div id="cost">
+                    
+                    </div>
+                </div>
+                </div>
+
+                <div class = "side" style="margin-left: 40px; width: 140px; padding:0" id="mainDishOverview">
+                    <img src="" style="margin-bottom: 5px;width: 140px;height:130px;">
+                    <div class = "w3-container w3-black" style="height:40px;">
+                        <p style="text-align: center;"></p>
+                    </div>
+                    <div class = "w3-container" style="padding:3; text-align: right;">
+                        <div id="cost">
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "side" style="margin-left: 40px; width: 140px; padding:0" id="dessertOverview">
+                    <img src="" style="margin-bottom: 5px;width: 140px;height:130px;">
+                    <div class = "w3-container w3-black" style="height:40px;">
+                        <p style="text-align: center;"></p>
+                    </div>
+                    <div class = "w3-container" style="padding:3; text-align: right;">
+                        <div id="cost">
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="side" style="margin-left: 30px"> 
+                        <div id="totalCost">
+                    </div>
+                </div>
+                <button class="button" style="margin-left:223px;margin-top:30px;width:140px" id="printFullRecipeButton">Print Full Recipe</button>
+            </div>
+
+            <!--Dinner Overview Preparation View-->
+            <div id="dinnerOverviewPreparationView" style="margin-top: 60px; margin-left: 30px">
+                <div style="margin-left: 40px;padding:0;margin-top:50px" id="starterInfo">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img src="" style="margin-bottom: 5px;width: 140px;height:130px;">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class = "w3-container" style="padding:0; text-align: right">
+                                <h1 id ="dishName" style="margin-top:0;">LASAGNE</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor neque egestas. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-xs-2" style="margin-left:200px">
+                                <h1 style="margin-top:0">Preparation</h1>
+                                <p id="prepText" style="width: 300px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor neque egestas. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-left: 40px;padding:0;margin-top:50px" id="mainDishInfo">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img src="" style="margin-bottom: 5px;width: 140px;height:130px;">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class = "w3-container" style="padding:0; text-align: right;">
+                                <h1 id ="dishName" style="margin-top:0">LASAGNE</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor neque egestas. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-xs-2" style="margin-left:200px">
+                                <h1 style="margin-top:0">Preparation</h1>
+                                <p id="prepText" style="width: 300px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor neque egestas. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-left: 40px;padding:0;margin-top:50px" id="dessertInfo">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2 col-xs-2">
+                            <img src="" style="margin-bottom: 5px;width: 140px;height:130px;">
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-xs-3">
+                            <div class = "w3-container" style="padding:0; text-align: right;">
+                                <h1 id ="dishName" style="margin-top:0">LASAGNE</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor neque egestas. </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-xs-2" style="margin-left:200px">
+                                <h1 style="margin-top:0">Preparation</h1>
+                                <p id="prepText" style="width: 300px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porttitor neque egestas. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/myDinnerView.js"></script>
+	<script src="js/view/dish-detail-view.js"></script>
+
+	<script src="js/view/myDinnerView.js"></script>
+	<script src="js/controller/myDinnerViewController.js"></script>
+
+	<script src="js/view/filteringView.js"></script>
+    <script src="js/controller/filteringViewController.js"></script>
+
+    <script src="js/view/overviewHeaderView.js"></script>
+
+	<script src="js/view/dishesView.js"></script>
+	<script src="js/controller/dishesViewController.js"></script>
+
+	<script src="js/view/dinnerOverviewView.js"></script>
+	<script src="js/view/dinnerOverviewPreparationView.js"></script>
+
+	<script src="js/controller/pageViewController.js"></script>
+</body>
+</html>

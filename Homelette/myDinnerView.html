@@ -1,0 +1,90 @@
+<html>
+<head>
+	<style>
+	html, body {
+		min-width: 1000px;
+		width: auto !important;
+		width: 1000px;
+	}
+	table {
+		text-align: center;
+		width: 100%;
+
+		border: 1px solid;
+		padding: 8px;
+		border-collapse: collapse;
+
+	}
+	tr {
+		border: solid;
+		border-width: 1px 0;
+		height: 50px;
+
+	}
+
+	.myDinnerView {
+		border: solid;
+		border-color: #000000;
+		border-width: 2px;
+		padding: 0;
+		width: 200px;
+	}
+	.side {
+		display:inline-block;
+	}
+	</style>
+
+</head>
+<body>
+	<div id="myDinnerView" class="myDinnerView">
+		<p style="margin:auto;text-align:center" id="hejhej">My Dinner</p>
+
+				<div class="side">
+					<p style="width: 75px;margin-left:35px">People</p>
+				</div>
+				<select name="myDropDown" class="side">
+					<option value="0">0</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
+
+			<table class="table table-hover" id="myTable">
+				<tr style="background-color: gray">
+					<th>Dish Name</th>
+					<th>Cost</th>
+				</tr>
+				<tr>
+					<th id ="starter">Pending</th>
+					<th id="starterCost">0.00</th>
+				</tr>
+				<tr>
+					<th id="main">Pending</th>
+					<th id="mainCost">0.00</th>
+				</tr>
+				<tr>
+					<th id="dessert">Pending</th>
+					<th id="dessertCost">0.00</th>
+				</tr>
+				<tr>
+					<th>Total cost: </th>
+					<th id="totalMenuCost">SEK 0.00</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/myDinnerView.js"></script>
+</body>
+</html>

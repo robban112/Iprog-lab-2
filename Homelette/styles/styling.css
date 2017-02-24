@@ -1,0 +1,57 @@
+html, body {
+		min-width: 1000px;
+		width: auto !important;
+		width: 1000px;
+	}
+	table {
+		text-align: center;
+		width: 100%;
+		border-collapse: collapse;
+
+	}
+	tr {
+		border: solid;
+		border-width: 1px 0;
+		height: 50px;
+
+	}
+
+	.myDinnerView {
+		border: solid;
+		border-color: #000000;
+		border-width: 2px;
+		padding: 0;
+		height: 100%;
+	}
+	.side {
+		display:inline-block;
+	}
+	div.header {
+	background-color: gray;
+	border: 2px;
+	border-color: #000000;
+	border-style: solid;
+	opacity: 0.6;
+	height: 90px;
+	margin:0;
+
+}
+.button {
+	background-color: #FF7F50;
+	border-style: solid;
+	border-color: #000000;
+	border-size: 1px;
+	color: gray;
+	margin-left: 10%;
+	margin-right:70%;
+	box-shadow: 2px 2px 1px #888888;
+}
+
+p.normal {
+	word-wrap: break-word;
+	font-size: medium;
+	font-family: Georgia, serif;
+	font-weight: normal;
+
+
+}
