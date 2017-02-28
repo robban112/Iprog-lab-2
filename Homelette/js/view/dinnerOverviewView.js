@@ -18,6 +18,7 @@ var DinnerOverviewView = function (container, model) {
 				b.find("p").html("");
 				b.find("#cost").html("0.00 SEK");
 			} else {
+				b.show();
 				b.find("img").attr("src","images/"+dishes[i].image);
 				b.find("p").html(dishes[i].name);
 				b.find("#cost").html(model.getDishPrice(dishes[i]) + ".00 SEK");
