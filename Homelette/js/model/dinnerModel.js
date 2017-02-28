@@ -6,6 +6,7 @@ var DinnerModel = function() {
   this.numberOfGuests = 0;
   this.dishesInMenu = [];
   this.observers = [];
+  this.selectedDish = null;
 
   	this.addObserver = function(observer) {
   		this.observers[observer.name] = observer.action;
@@ -27,19 +28,21 @@ var DinnerModel = function() {
 		this.numberOfGuests = num;
 		this.notifyObservers("updateMyDinnerView");
 		this.notifyObservers("updateDinnerOverviewView");
+		this.notifyObservers("updateDishDetailView");
 	}
 
 	this.getNumberOfGuests = function() {
     	return this.numberOfGuests;
 	}
 
+	this.setSelectedDish = function(id) {
+		this.selectedDish = this.getDish(id);
+		this.notifyObservers("updateDishDetailView");
+	}
+
 	//Returns the dish that is on the menu for selected type
 	this.getSelectedDish = function(type) {
-    for (var dish in this.dishesInMenu) {
-      if (dish.type == type) {
-        return dish;
-      }
-    }
+    	return this.selectedDish;
 	}
 
 	//Returns all the dishes on the menu.
