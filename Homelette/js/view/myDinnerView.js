@@ -1,10 +1,7 @@
 var MyDinnerView = function (container, model) {
 
-	this.dropDown = $("#drop");
-	this.firstRow = $("#firstRow");
-	this.secondRow = $("#secondRow");
-	this.thirdRow = $("#thirdRow");
-	this.confirmButton = $("#confirmButton");
+	this.dropDown = container.find("#drop");
+	this.confirmButton = container.find("#confirmButton");
 	this.container = container;
 
 	model.addObserver({
@@ -19,19 +16,17 @@ var MyDinnerView = function (container, model) {
 
 loadMyDinnerView = function(container, model) {
 	var dishes = model.getFullMenu();
-	var array = ["#first", "#second", "#third"];
+	var header = container.find('#tableHeader');
 
-	for (var i = 0; i<3; i++) {
-		var a = $(array[i]);
-		var b = $(array[i] + "Cost");
-		if (dishes[i] == undefined) {
-			a.html("Pending");
-			b.html("0.00")
-		} else {
-			a.html(dishes[i].name);
-			b.html(model.getDishPrice(dishes[i]) + ".00");
-		}
-	}
+	var dishrows = container.find('#myTable .menuDish')
+	dishrows.remove();
 
-	$("#totalMenuCost").html(model.getTotalMenuPrice() + ".00");
+	dishes.forEach(dish => {
+		const nameFrame = `<th>${dish.name}</th>`;
+		const priceFrame = `<th>${model.getDishPrice(dish)}.00</th>`;
+		const dishFrame = $(`<tr class=menuDish id=${dish.id}>${nameFrame}${priceFrame}</tr>`);
+		dishFrame.insertAfter(header);
+	})
+
+	container.find("#totalMenuCost").html(model.getTotalMenuPrice() + ".00");
 }
