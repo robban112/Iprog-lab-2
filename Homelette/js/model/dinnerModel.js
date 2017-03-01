@@ -21,7 +21,7 @@ var DinnerModel = function() {
   		} else {
   			this.observers[obj]();
   		}
-	
+
   	}
 
 	this.setNumberOfGuests = function(num) {
@@ -84,9 +84,9 @@ var DinnerModel = function() {
 		this.notifyObservers("updateDinnerOverviewView");
 	}
 
-	//Removes dish from menu
-	this.removeDishFromMenu = function(index) {
-		this.dishesInMenu.splice(index-1,1);
+	//Removes dish with the given id from menu
+	this.removeDishFromMenu = function(id) {
+    this.dishesInMenu = this.dishesInMenu.filter(dish => dish.id != id);
 		this.notifyObservers("updateMyDinnerView");
 		this.notifyObservers("updateDinnerOverviewView");
 	}
@@ -120,10 +120,6 @@ var DinnerModel = function() {
 				return dishes[key];
 			}
 		}
-	}
-
-	this.hej = function() {
-		return dishes;
 	}
 
 

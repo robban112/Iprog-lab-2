@@ -1,9 +1,6 @@
 $(function() {
 	//We instantiate our model
 	var model = new DinnerModel();
-	model.addDishToMenu(1);
-	model.addDishToMenu(100);
-	model.addDishToMenu(200);
 
 	//And create the needed controllers and views
 	var filteringView = new FilteringView($("#filteringView"), model);
