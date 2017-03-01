@@ -11,7 +11,6 @@ $(function() {
 	var myDinnerViewController = new MyDinnerViewController(myDinnerView, model);
 
 	var dishesView = new DishesView($("#dishesView"), model);
-	var dishesViewController = new DishesViewController(dishesView, model);
 
 	var filteringView = new FilteringView($("#filteringView"), model);
 	var filteringViewController = new FilteringViewController(filteringView, dishesView, model);
