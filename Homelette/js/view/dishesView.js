@@ -5,7 +5,7 @@ var DishesView = function (container, model) {
 
 
 	this.loadDishesView = function(container, model, type, filter) {
-		var dishFrame = $("#dish");
+		var dishFrame = container.find("#dish");
 		dishFrame.show();
 		switch(type) {
 			case "Main": 	type = "main dish";
@@ -20,7 +20,7 @@ var DishesView = function (container, model) {
 		if(!(this.lastType == undefined)) {
 			var dishes = model.getAllDishes(this.lastType);
 			for (var i = 0; i < dishes.length; i++) {
-				$("#" + dishes[i].id).remove();
+				container.find("#" + dishes[i].id).remove();
 			}
 		}
 		var dishes = model.getAllDishes(type,filter);
@@ -37,4 +37,3 @@ var DishesView = function (container, model) {
 
 	this.loadDishesView(container, model, "starter");
 }
-
