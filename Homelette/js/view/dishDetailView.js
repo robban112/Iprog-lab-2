@@ -8,7 +8,7 @@ var DishDetailView = function (container, model) {
 	model.addObserver(this);
 
 	this.update = function(obj) {
-		if(obj == undefined || obj.updates.includes("selectedDish")) {
+		if(obj == undefined || obj.updates.includes("selectedDish") || obj.updates.includes("numberOfGuests")) {
 			container.find("#ingredientsTable tr").remove();
 
 			var dish = model.getSelectedDish();
@@ -17,10 +17,10 @@ var DishDetailView = function (container, model) {
 			ingredients.forEach(ingr => {
 				container.find("#ingredientsTable").append(
 					`<tr>
-						<td>${ingr.quantity} ${ingr.unit}</td>
+						<td>${ingr.quantity * model.numberOfGuests} ${ingr.unit}</td>
 						<td>${ingr.name}</td>
 						<td>SEK</td>
-						<td>${ingr.price}</td>
+						<td>${ingr.price * model.numberOfGuests}</td>
 					</tr>`
 				);
 			})
