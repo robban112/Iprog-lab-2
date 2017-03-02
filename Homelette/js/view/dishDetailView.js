@@ -5,9 +5,10 @@ var DishDetailView = function (container, model) {
 	this.confirmDishButton = container.find("#confirmDishButton");
 	this.back = container.find("#back");
 
-	model.addObserver({
-		name: "updateDishDetailView",
-		action: function () {
+	model.addObserver(this);
+
+	this.update = function(obj) {
+		if(obj == undefined || obj.updates.includes("selectedDish")) {
 			container.find("#ingredientsTable tr").remove();
 
 			var dish = model.getSelectedDish();
@@ -22,5 +23,5 @@ var DishDetailView = function (container, model) {
 			container.find("#prepText").html(dish.description);
 			container.find("img").attr("src","images/" + dish.image);
 		}
-	});
+	}
 }
