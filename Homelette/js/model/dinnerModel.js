@@ -26,7 +26,9 @@ var DinnerModel = function() {
   }
 
   //function that returns a dish of specific ID
-  this.getDish = function (id) { return dishes.find(dish => dish.id == id); }
+  this.getDish = function (id) {
+    return dishes.find(dish => dish.id == id);
+  }
 
   this.setSelectedDish = function(id) {
     this.selectedDish = this.getDish(id);
