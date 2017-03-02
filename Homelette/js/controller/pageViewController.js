@@ -9,7 +9,7 @@ var PageViewController = function (
 	dishDetailView
 ) {
 
-	myDinnerView.confirmButton.click( function () {
+	myDinnerView.confirmButton.click(function () {
 		dishesView.container.hide();
 		myDinnerView.container.hide();
 		filteringView.container.hide();
@@ -21,7 +21,7 @@ var PageViewController = function (
 		overviewHeaderView.load();
 	});
 
-	overviewHeaderView.backAndEditDinnerButton.click( function () {
+	overviewHeaderView.backAndEditDinnerButton.click(function () {
 		overviewHeaderView.container.hide();
 		dinnerOverviewView.container.hide();
 		dinnerOverviewPreparationView.container.hide();
@@ -31,7 +31,7 @@ var PageViewController = function (
 		filteringView.container.show();
 	});
 
-	dinnerOverviewView.printFullRecipeButton.click( function () {
+	dinnerOverviewView.printFullRecipeButton.click(function () {
 		dinnerOverviewView.container.hide();
 
 		dinnerOverviewPreparationView.container.show();
@@ -56,7 +56,7 @@ var PageViewController = function (
 		filteringView.container.show();
 	});
 
-	dishDetailView.confirmDishButton.click( function () {
+	dishDetailView.confirmDishButton.click(function () {
 		dishDetailView.container.hide();
 		model.addDishToMenu(model.getSelectedDish().id);
 

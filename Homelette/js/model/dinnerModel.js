@@ -45,12 +45,12 @@ var DinnerModel = function() {
   //Returns all ingredients for all the dishes on the menu.
   this.getAllIngredients = function() {
     return this.dishesInMenu
-      .map(dish => dish.ingredients)
-      .reduce((a,b) => a.concat(b),[]);
+    .map(dish => dish.ingredients)
+    .reduce((a,b) => a.concat(b),[]);
   }
 
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
+  this.getTotalMenuPrice = function() {
     return this.getPriceForIngredients(this.getAllIngredients());
   }
 
@@ -62,8 +62,8 @@ var DinnerModel = function() {
   //Returns the price for a set of ingredients
   this.getPriceForIngredients = function(ingredients) {
     const priceOfIngredients = ingredients
-      .map(ingr=>ingr.price)
-      .reduce((a,b)=>a+b, 0);
+    .map(ingr=>ingr.price)
+    .reduce((a,b)=>a+b, 0);
     return this.numberOfGuests * priceOfIngredients;
   }
 
