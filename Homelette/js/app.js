@@ -19,6 +19,14 @@ $(function() {
 	var dinnerOverviewView = new DinnerOverviewView($("#dinnerOverviewView"), model);
 	var dinnerOverviewPreparationView = new DinnerOverviewPreparationView($("#dinnerOverviewPreparationView"), model);
 
-	var pageViewController = new PageViewController(model, dinnerOverviewPreparationView, dinnerOverviewView, overviewHeaderView, filteringView, myDinnerView, dishesView, dishDetailView);
-
+	var pageViewController = new PageViewController(
+		model,
+		dinnerOverviewPreparationView,
+		dinnerOverviewView,
+		overviewHeaderView,
+		filteringView,
+		myDinnerView,
+		dishesView,
+		dishDetailView
+	);
 });

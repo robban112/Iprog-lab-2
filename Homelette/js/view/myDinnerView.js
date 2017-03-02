@@ -8,12 +8,15 @@ var MyDinnerView = function (container, model) {
 	model.addObserver(this);
 
 	this.update = function(obj) {
-		if (!(obj == undefined
+		//only update if a relevant change has occured in the model
+		if (
+			!(obj == undefined
 				|| obj.updates.includes("newDish")
 				|| obj.updates.includes("numberOfGuests")
-				|| obj.updates.includes("removeDish"))) {
-			return;
-		}
+				|| obj.updates.includes("removeDish")
+			)
+		) { return; }
+
 		var dishes = model.getFullMenu();
 		var header = container.find('#tableHeader');
 
@@ -21,9 +24,13 @@ var MyDinnerView = function (container, model) {
 		dishrows.remove();
 
 		dishes.forEach(dish => {
-			const nameFrame = `<th>${dish.name}</th>`;
-			const priceFrame = `<th>${model.getDishPrice(dish)}.00</th>`;
-			const dishFrame = $(`<tr class=menuDish id=${dish.id}>${nameFrame}${priceFrame}</tr>`);
+			const dishFrame = $(
+				`<tr class=menuDish id=${dish.id}>
+					 <th>${dish.name}</th>
+					 <th>${model.getDishPrice(dish)}.00</th>
+				 </tr>`
+			 )
+
 			dishFrame.insertAfter(header);
 		})
 

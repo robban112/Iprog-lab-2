@@ -14,9 +14,16 @@ var DishDetailView = function (container, model) {
 			var dish = model.getSelectedDish();
 			var ingredients = dish.ingredients;
 
-			for (i = 0;i<ingredients.length;i++) {
-				container.find("#ingredientsTable").append("<tr><td>"+ingredients[i].quantity + " " + ingredients[i].unit +"</td><td>"+ingredients[i].name+"</td><td>SEK</td><td>"+ingredients[i].price+"</td></tr>");
-			}
+			ingredients.forEach(ingr => {
+				container.find("#ingredientsTable").append(
+					`<tr>
+						<td>${ingr.quantity} ${ingr.unit}</td>
+						<td>${ingr.name}</td>
+						<td>SEK</td>
+						<td>${ingr.price}</td>
+					</tr>`
+				);
+			})
 
 			container.find("#totalCost").html("Total Cost: "+model.getDishPrice(dish));
 			container.find("#dishName").html(dish.name);

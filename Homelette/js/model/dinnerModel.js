@@ -11,7 +11,7 @@ var DinnerModel = function() {
   this.addObserver = function(observer) {
     this.observers.push(observer);
   }
-  
+
   this.notifyObservers = function(obj) {
     this.observers.forEach(o => o.update(obj));
   }
@@ -43,22 +43,25 @@ var DinnerModel = function() {
   //Returns all ingredients for all the dishes on the menu.
   this.getAllIngredients = function() {
     return this.dishesInMenu
-    .map(dish => dish.ingredients)
-    .reduce((a,b) => a.concat(b),[]);
+      .map(dish => dish.ingredients)
+      .reduce((a,b) => a.concat(b),[]);
   }
 
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
-  this.getTotalMenuPrice = function() {
-    const priceOfIngredients = this.getAllIngredients()
-    .map(ingr=>ingr.price)
-    .reduce((a,b)=>a+b,0);
-    return this.numberOfGuests * priceOfIngredients;
+	this.getTotalMenuPrice = function() {
+    return this.getPriceForIngredients(this.getAllIngredients());
   }
 
+  //Returns the price for a given dish
   this.getDishPrice = function(dish) {
-    const priceOfIngredients = dish.ingredients
-    .map(ingr=>ingr.price)
-    .reduce((a,b)=>a+b,0);
+    return this.getPriceForIngredients(dish.ingredients);
+  }
+
+  //Returns the price for a set of ingredients
+  this.getPriceForIngredients = function(ingredients) {
+    const priceOfIngredients = ingredients
+      .map(ingr=>ingr.price)
+      .reduce((a,b)=>a+b, 0);
     return this.numberOfGuests * priceOfIngredients;
   }
 
