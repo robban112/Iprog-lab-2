@@ -12,12 +12,8 @@ var DinnerOverviewView = function (container, model) {
 
 		for(var i = 0; i<3; i++) {
 			var b = this.container.find("#"+array[i] + "Overview");
-			if(dishes[i] == undefined) {
-				b.hide();
-				b.find("img").attr("src","");
-				b.find("p").html("");
-				b.find("#cost").html("0.00 SEK");
-			} else {
+			if(dishes[i] == undefined) { b.hide(); }
+			else {
 				b.show();
 				b.find("img").attr("src","images/"+dishes[i].image);
 				b.find("p").html(dishes[i].name);
