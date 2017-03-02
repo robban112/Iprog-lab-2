@@ -5,7 +5,7 @@ var OverviewHeaderView = function(container, model) {
 	this.backAndEditDinnerButton = container.find("#backAndEditDinnerButton");
 	this.header = container.find("#headerText");
 
-	this.loadOverviewHeaderView = function(container, model) {
-		this.header.html("My Dinner: " + model.getNumberOfGuests() + " people");
+	this.load = function() {
+		this.header.html("My Dinner: " + this.model.getNumberOfGuests() + " people");
 	}
 }

@@ -25,6 +25,9 @@ var DinnerModel = function() {
     return this.numberOfGuests;
   }
 
+  //function that returns a dish of specific ID
+  this.getDish = function (id) { return dishes.find(dish => dish.id == id); }
+
   this.setSelectedDish = function(id) {
     this.selectedDish = this.getDish(id);
     this.notifyObservers({updates: ["selectedDish"]});
@@ -103,16 +106,6 @@ var DinnerModel = function() {
       return dish.type == type && found;
     });
   }
-
-  //function that returns a dish of specific ID
-  this.getDish = function (id) {
-    for(key in dishes){
-      if(dishes[key].id == id) {
-        return dishes[key];
-      }
-    }
-  }
-
 
   // the dishes variable contains an array of all the
   // dishes in the database. each dish has id, name, type,
