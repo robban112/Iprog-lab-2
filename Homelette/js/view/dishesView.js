@@ -7,15 +7,7 @@ var DishesView = function (container, model) {
 	this.load = function(type, filter) {
 		var dishFrame = this.container.find("#dish");
 		dishFrame.show();
-		switch(type) {
-			case "Main": 	type = "main dish";
-						break;
-			case "Dessert": type = "dessert";
-						break;
-			case "Starter": type = "starter";
-						break;
-
-		}
+		if(type == 'appetizer') { type = 'starter';}
 
 		if(this.lastType != undefined) {
 			var dishes = this.model.getAllDishes(this.lastType);

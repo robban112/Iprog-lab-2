@@ -49,36 +49,47 @@
 						<th id="totalMenuCost">SEK 0.00</th>
 					</tr>
 				</table>
-				<button type="button" class="button" style="margin-left:50px; width: 80px;" id="confirmButton">Confirm Dinner</button>
+				<button type="button" class="myButton" style="margin:25%" id="confirmButton">Confirm Dinner</button>
 			</div>
 		</div>
 
 		<!--Filtering view-->
-		<div id = "filteringView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0">
-			<div class="w3-container w3-yellow">
-				<div style="margin-top:1%;margin-bottom:1%">
-					<div style="margin-left:2%"> <h2>SELECT DISH</h2> </div>
+		<div id = "filteringView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0;background:url('images/yellow-background.jpg')">
+		
+			<div style="margin-top:1%;margin-bottom:1%">
+				<div style="margin-left:2%"> <h2 style="font-family:Palatino">SELECT DISH</h2> </div>
 
-					<div class="side" style="margin-left:2%">
-						<input type="text" name="keywords" placeholder="Enter Key Words" id="keyText"></input>
-					</div>
-					<div class="side">
-						<input type="submit" value="search" id="searchButton">
-					</div>
-					<div class="side">
-						<select name="myDropDown" style="width:150px;margin-left: 15%" id="dropDown">
-							<option value="Starter">Starter</option>
-							<option value="Main">Main</option>
-							<option value="Dessert">Dessert</option>
-						</select>
+				<div class="side" style="width:300px;margin-left:2%">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Enter Key Words" id="keyText"></input>
+						<span class="input-group-addon" id="searchButton" style="cursor:pointer; cursor: hand">search</span>
 					</div>
 				</div>
+
+				
+
+				<div class="side" >
+					<select name="myDropDown" style="width:150px;margin-left:50px" id="dropDown">
+						<option value="appetizer">Appetizer</option>
+						<option value="main course">Main course</option>
+						<option value="dessert">Dessert</option>
+						<option value="side dish">Side dish</option>
+						<option value="salad">Salad</option>
+						<option value="bread">Bread</option>
+						<option value="breakfast">Breakfast</option>
+						<option value="soup">Soup</option>
+						<option value="beverage">Beverage</option>
+						<option value="sauce">Sauce</option>
+						<option value="drink">Drink</option>
+					</select>
+				</div>
 			</div>
+		
 		</div>
 
 		<!--Dishes View-->
 		<div id="dishesView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0">
-			<div class = "side" style="margin-top: 10px; margin-left: 10px; padding:1" id="dish">
+			<div class = "side" style="margin-top: 10px; margin-left: 10px; padding:1;cursor: hand" id="dish">
 				<img src="" id="picture" style="margin-bottom: 5px;width: 160px;height:130px;">
 				<div class = "w3-container w3-black" style="height:25px; width:160px;">
 					<p style="text-align: center;"></p>
@@ -100,7 +111,7 @@
 						<h3 style="margin-left: 100px;margin-top: 20px;" id="headerText"></h3>
 					</div>
 					<div class="col-lg-6 col-md-6 col-xs-6">
-						<button class="button" style="margin-right:0;margin-left:60%;margin-top:20px;" id="backAndEditDinnerButton">Go back and edit dinner</button>
+						<button class="myButton" style="margin-right:0;margin-left:60%;margin-top:20px;" id="backAndEditDinnerButton">Go back and edit dinner</button>
 					</div>
 				</div>
 			</div>
@@ -148,7 +159,7 @@
 				<div id="totalCost">
 				</div>
 			</div>
-			<button class="button" style="margin-left:223px;margin-top:30px;width:140px" id="printFullRecipeButton">Print Full Recipe</button>
+			<button class="myButton" style="margin-left:223px;margin-top:30px;width:140px" id="printFullRecipeButton">Print Full Recipe</button>
 		</div>
 
 		<!--Dinner Overview Preparation View-->
@@ -212,11 +223,11 @@
 		<!--Dish Detail View-->
 		<div id="dishDetailView">
 			<div class="col-lg-5 col-md-5 col-xs-5" style="padding:0;">
-				<div style="margin-left: 40px; margin-top:40px; margin-right:40px">
+				<button type="button" class="myButton"style="margin-top: 20px; margin-left:40px;margin-right:40px;background-color: #FF7F50;" id="back">Back and edit dinner</button>
+				<div style="margin-left: 40px; margin-top:20px; margin-right:40px">
 					<h1 id="dishName"></h1>
 					<img src="" style="width: 100%; height: 330px;">
 					<p class="normal" style="width: 100%; margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus magna nec laoreet dapibus.</p>
-					<button type="button" style="margin-top: 20px;background-color: #FF7F50;" id="back">Back and edit dinner</button>
 					<h1>PREPARATION<h1>
 						<p class="normal" style="width: 100%;" id = "prepText"></p>
 					</div>
@@ -224,13 +235,13 @@
 
 
 
-				<div class="col-lg-5 col-md-5 col-xs-5" style="padding:0;border-width: 1px;border:solid;border-color: black;">
-					<div class="w3-container w3-orange">
+				<div class="col-lg-4 col-md-4 col-xs-4" style="padding:0;border-width: 1px;border:solid;border-color: black; margin-top:80px;margin-left:10px">
+					<div class="w3-container w3-pale-blue">
 						<h1>Ingredients for x people</h1>
 						<table class="table table-hover" id="ingredientsTable">
 						</table>
 						<div class="side">
-							<button type="button" class="button" style="margin-top:10px;" id="confirmDishButton">Confirm Dish</button>
+							<button type="button" class="myButton" style="margin-top:10px;" id="confirmDishButton">Confirm Dish</button>
 						</div>
 						<div class="side" style="margin-left: 75%">
 							<p id="totalCost"></p>
