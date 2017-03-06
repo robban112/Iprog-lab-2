@@ -26,15 +26,15 @@ var MyDinnerView = function (container, model) {
 		dishes.forEach(dish => {
 			const dishFrame = $(
 				`<tr class=menuDish id=${dish.id}>
-					 <th>${dish.name}</th>
-					 <th>${model.getDishPrice(dish)}.00</th>
+					 <th>${dish.title}</th>
+					 <th>${model.getDishPrice(dish)}</th>
 				 </tr>`
 			 )
 
 			dishFrame.insertAfter(header);
 		})
 
-		container.find("#totalMenuCost").html(model.getTotalMenuPrice() + ".00");
+		container.find("#totalMenuCost").html(model.getTotalMenuPrice() + " SEK");
 	}
 
 	this.update();
