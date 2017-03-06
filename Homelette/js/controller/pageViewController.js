@@ -58,7 +58,7 @@ var PageViewController = function (
 
 	dishDetailView.confirmDishButton.click(function () {
 		dishDetailView.container.hide();
-		model.addDishToMenu(model.getSelectedDish().id);
+		model.addDishToMenu(model.getSelectedDish());
 
 		dishesView.container.show();
 		myDinnerView.container.show();

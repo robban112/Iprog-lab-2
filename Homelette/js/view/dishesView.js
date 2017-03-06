@@ -1,31 +1,31 @@
 var DishesView = function (container, model) {
 	this.container = container;
 	this.model = model;
-	this.lastType = undefined;
 
 
 	this.load = function(type, filter) {
-		var dishFrame = this.container.find("#dish");
-		dishFrame.show();
-		if(type == 'appetizer') { type = 'starter';}
-
-		if(this.lastType != undefined) {
-			var dishes = this.model.getAllDishes(this.lastType);
+		const baseURI = this.model.recipeImagesBaseURI;
+		container.find(".dishSquare").remove();
+		model.getAllDishes(type,filter,function(dishes) {
 			for (var i = 0; i < dishes.length; i++) {
-				container.find("#" + dishes[i].id).remove();
+				const dishFrame = $(`
+					<div class = "side dishSquare" style="margin-top: 10px; margin-left: 10px; padding:1" id=${dishes[i].id}>
+						<img src=${baseURI}${dishes[i].image} style="margin-bottom: 5px;width: 160px;height:130px;">
+						<div class = "w3-container w3-black" style="height:65px; width:160px;">
+							<p style="text-align: center; vertical-align: middle">${dishes[i].title}</p>
+						</div>
+						<div class = "w3-container" style="padding:3;overflow:scroll;width:160px">
+							<wbr style="display: inline-block;">
+								Lorem ipsum dolor sit amet,
+								consectetur adipiscing elit. Aenean et ultricies quam.
+							</wbr>
+						</div>
+					</div>
+				`)
+				$("#dishesView").append(dishFrame);
 			}
-		}
-		var dishes = model.getAllDishes(type,filter);
-		for (var i = 0; i < dishes.length; i++) {
-			var dishClone = dishFrame.clone();
-			dishClone.find("img").attr("src","images/"+dishes[i].image);
-			dishClone.attr("id",dishes[i].id);
-			dishClone.find("p").html(dishes[i].name);
-			dishClone.insertAfter("#dish");
-		}
-		dishFrame.hide();
-		this.lastType = type;
+		});
 	}
 
-	this.load("starter");
+	this.load("main course", "");
 }

@@ -8,18 +8,25 @@ var DinnerOverviewView = function (container, model) {
 
 	this.load = function() {
 		var dishes = this.model.getFullMenu();
-		var array = ["starter", "mainDish", "dessert"];
 
-		for(var i = 0; i<3; i++) {
-			var b = this.container.find("#"+array[i] + "Overview");
-			if(dishes[i] == undefined) { b.hide(); }
-			else {
-				b.show();
-				b.find("img").attr("src","images/"+dishes[i].image);
-				b.find("p").html(dishes[i].name);
-				b.find("#cost").html(this.model.getDishPrice(dishes[i]) + ".00 SEK");
-			}
+		container.find(".dishOverviewFrame").remove();
+
+		for(var i = 0; i<dishes.length;i++){
+			const dishOverviewFrame = $(`
+				<div class = "side dishOverviewFrame" style="margin-left: 40px; width: 140px; padding:0" id="starterOverview">
+					<img src="${dishes[i].image}" style="margin-bottom: 5px;width: 140px;height:130px;">
+					<div class = "w3-container w3-black" style="height:40px;">
+						<p style="text-align: center;">${dishes[i].title}</p>
+					</div>
+					<div class = "w3-container" style="padding:3; text-align: right;">
+						<div>
+							${this.model.getDishPrice(dishes[i]) + " SEK"}
+						</div>
+					</div>
+				</div>
+			`)
+			container.prepend(dishOverviewFrame)
 		}
-		container.find("#totalCost").html("Total Price: " + this.model.getTotalMenuPrice());
+		container.find("#totalCost").html("Total Price: " + this.model.getTotalMenuPrice() + " SEK");
 	}
 }

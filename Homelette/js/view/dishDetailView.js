@@ -12,15 +12,19 @@ var DishDetailView = function (container, model) {
 			container.find("#ingredientsTable tr").remove();
 
 			var dish = model.getSelectedDish();
-			var ingredients = dish.ingredients;
+			if (dish == undefined) { return; }
+
+			container.find("#peopleNum").html(`Ingredients for ${this.model.getNumberOfGuests()} people`);
+
+			var ingredients = dish.extendedIngredients;
 
 			ingredients.forEach(ingr => {
 				container.find("#ingredientsTable").append(
 					`<tr>
-						<td>${ingr.quantity * model.numberOfGuests} ${ingr.unit}</td>
+						<td>${ingr.amount * model.numberOfGuests} ${ingr.unit}</td>
 						<td>${ingr.name}</td>
 						<td>SEK</td>
-						<td>${ingr.price * model.numberOfGuests}</td>
+						<td>${model.numberOfGuests}</td>
 					</tr>`
 				);
 			})
@@ -28,7 +32,7 @@ var DishDetailView = function (container, model) {
 			container.find("#totalCost").html("Total Cost: "+model.getDishPrice(dish));
 			container.find("#dishName").html(dish.name);
 			container.find("#prepText").html(dish.description);
-			container.find("img").attr("src","images/" + dish.image);
+			container.find("img").attr("src",dish.image);
 		}
 	}
 }
