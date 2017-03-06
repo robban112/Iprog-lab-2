@@ -28,10 +28,10 @@ var DishDetailView = function (container, model) {
 					</tr>`
 				);
 			})
-
+			container.find("#peopleNum").html("Ingredients for "+model.getNumberOfGuests()+" people");
 			container.find("#totalCost").html("Total Cost: "+model.getDishPrice(dish) + " SEK");
 			container.find("#dishName").html(dish.name);
-			container.find("#prepText").html(dish.description);
+			container.find("#prepText").html(dish.instructions);
 			container.find("img").attr("src",dish.image);
 		}
 	}

@@ -13,25 +13,16 @@ html, body {
 		border: solid;
 		border-width: 1px 0;
 		height: 50px;
-
 	}
-
-	.myDinnerView {
-		border: solid;
-		border-color: #000000;
-		border-width: 2px;
-		padding: 0;
-		height: 100%;
+	th {
+		font-family: Palatino;
 	}
 	.side {
 		display:inline-block;
 	}
 	div.header {
-	background-color: gray;
-	border: 2px;
-	border-color: #000000;
-	border-style: solid;
-	opacity: 0.6;
+	overflow: hidden;
+	background-color: #333;
 	height: 90px;
 	margin:0;
 
@@ -63,7 +54,6 @@ html, body {
 	-webkit-border-radius:18px;
 	border-radius:18px;
 	border:2px solid #eeb44f;
-	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;

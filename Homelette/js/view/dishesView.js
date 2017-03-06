@@ -19,7 +19,7 @@ var DishesView = function (container, model) {
 					<div class = "side dishSquare" style="margin-top: 10px; margin-left: 10px; padding:1;cursor: hand" id=${dishes[i].id}>
 						<img src=${baseURI}${dishes[i].image} style="margin-bottom: 5px;width: 160px;height:130px;">
 						<div class = "w3-container w3-black" style="height:65px; width:160px;">
-							<p style="text-align: center; vertical-align: middle">${dishes[i].title}</p>
+							<p style="text-align: center; vertical-align: middle;font-family:Palatino">${dishes[i].title}</p>
 						</div>
 						<div class = "w3-container" style="padding:3;overflow:scroll;width:160px">
 							<wbr style="display: inline-block;">
