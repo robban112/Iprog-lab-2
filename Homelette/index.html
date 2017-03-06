@@ -1,20 +1,21 @@
 <html>
-<head>
-	<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="styles/styling.css">
+	<head>
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="styles/styling.css">
 
-</head>
-<body>
-	<div class="header">
-		<div class="side">
-			<h1>HOMELETTE </h1>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="side">
+				<h1>HOMELETTE </h1>
+			</div>
+			<div class="side" style="margin-top:40px;margin-left:40px;">
+				<em>From the best chefs in the world directly into your kitchen</em>
+			</div>
 		</div>
-		<div class="side" style="margin-top:40px;margin-left:40px;">
-			<em>From the best chefs in the world directly into your kitchen</em>
-		</div>
-	</div>
-	<div class="row">
+		<div class="row">
 
 		<!--My Dinner View-->
 		<div id = "myDinnerView" class="col-lg-2 col-md-2 col-xs-2" style="padding:0; border-right:solid 1px; height: 100%">
@@ -123,47 +124,45 @@
 					<p class="normal" style="width: 100%; margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus magna nec laoreet dapibus.</p>
 					<button type="button" style="margin-top: 20px;background-color: #FF7F50;" id="back">Back and edit dinner</button>
 					<h1>PREPARATION<h1>
-						<p class="normal" style="width: 100%;" id = "prepText"></p>
-					</div>
-				</div>
-
-
-
-				<div class="col-lg-5 col-md-5 col-xs-5" style="padding:0;border-width: 1px;border:solid;border-color: black;">
-					<div class="w3-container w3-orange">
-						<h1 id="peopleNum">Ingredients for x people</h1>
-						<table class="table table-hover" id="ingredientsTable">
-						</table>
-						<div class="side">
-							<button type="button" class="button" style="margin-top:10px;" id="confirmDishButton">Confirm Dish</button>
-						</div>
-						<div class="side" style="margin-left: 75%">
-							<p id="totalCost"></p>
-						</div>
-					</div>
+					<p class="normal" style="width: 100%;" id = "prepText"></p>
 				</div>
 			</div>
 
+			<div class="col-lg-5 col-md-5 col-xs-5" style="padding:0;border-width: 1px;border:solid;border-color: black;">
+				<div class="w3-container w3-orange">
+					<h1 id="peopleNum">Ingredients for x people</h1>
+					<table class="table table-hover" id="ingredientsTable">
+					</table>
+					<div class="side">
+						<button type="button" class="button" style="margin-top:10px;" id="confirmDishButton">Confirm Dish</button>
+					</div>
+					<div class="side" style="margin-left: 75%">
+						<p id="totalCost"></p>
+					</div>
+				</div>
+			</div>
+		</div>
 
-			<script src="https://code.jquery.com/jquery.js"></script>
-			<script src="js/app.js"></script>
-			<script src="js/model/dinnerModel.js"></script>
-			<script src="js/view/myDinnerView.js"></script>
-			<script src="js/view/dishDetailView.js"></script>
 
-			<script src="js/view/myDinnerView.js"></script>
-			<script src="js/controller/myDinnerViewController.js"></script>
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/model/dinnerModel.js"></script>
+		<script src="js/view/myDinnerView.js"></script>
+		<script src="js/view/dishDetailView.js"></script>
 
-			<script src="js/view/filteringView.js"></script>
-			<script src="js/controller/filteringViewController.js"></script>
+		<script src="js/view/myDinnerView.js"></script>
+		<script src="js/controller/myDinnerViewController.js"></script>
 
-			<script src="js/view/overviewHeaderView.js"></script>
+		<script src="js/view/filteringView.js"></script>
+		<script src="js/controller/filteringViewController.js"></script>
 
-			<script src="js/view/dishesView.js"></script>
+		<script src="js/view/overviewHeaderView.js"></script>
 
-			<script src="js/view/dinnerOverviewView.js"></script>
-			<script src="js/view/dinnerOverviewPreparationView.js"></script>
+		<script src="js/view/dishesView.js"></script>
 
-			<script src="js/controller/pageViewController.js"></script>
-		</body>
-		</html>
+		<script src="js/view/dinnerOverviewView.js"></script>
+		<script src="js/view/dinnerOverviewPreparationView.js"></script>
+
+		<script src="js/controller/pageViewController.js"></script>
+	</body>
+</html>
