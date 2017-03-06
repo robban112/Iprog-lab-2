@@ -6,7 +6,8 @@ var PageViewController = function (
 	filteringView,
 	myDinnerView,
 	dishesView,
-	dishDetailView
+	dishDetailView,
+	loadingView
 ) {
 
 	myDinnerView.confirmButton.click(function () {
@@ -39,13 +40,23 @@ var PageViewController = function (
 	});
 
 	dishesView.container.on('click', '.side', function(e) {
-		const target = e.currentTarget;
-		model.setSelectedDish(target.id);
-
 		dishesView.container.hide();
 		filteringView.container.hide();
+		loadingView.container.show();
+		const loadframe = $(`
+				<img class="loadFrame"
+						 src="images/spinner.gif"
+						 style="width:150px;height:150px">
+				</img>
+		`);
+		loadingView.container.append(loadframe);
 
-		dishDetailView.container.show();
+
+		const target = e.currentTarget;
+		model.setSelectedDish(target.id, function() {
+			dishDetailView.container.show();
+			loadingView.container.find(".loadFrame").remove();
+		});
 	});
 
 	dishDetailView.back.click( function () {

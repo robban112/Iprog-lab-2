@@ -29,7 +29,7 @@ var DishDetailView = function (container, model) {
 				);
 			})
 
-			container.find("#totalCost").html("Total Cost: "+model.getDishPrice(dish));
+			container.find("#totalCost").html("Total Cost: "+model.getDishPrice(dish) + " SEK");
 			container.find("#dishName").html(dish.name);
 			container.find("#prepText").html(dish.description);
 			container.find("img").attr("src",dish.image);

@@ -17,122 +17,117 @@
 		</div>
 		<div class="row">
 
-		<!--My Dinner View-->
-		<div id = "myDinnerView" class="col-lg-2 col-md-2 col-xs-2" style="padding:0; border-right:solid 1px; height: 100%">
-			<div style="margin-left:5%">
-				<p style="margin:auto;text-align:center">My Dinner</p>
-				<div class="side">
-					<p style="width: 75px;margin-left:35px">People</p>
-				</div>
-				<select name="myDropDown" class="side" id="drop">
-					<option value="0">0</option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
-				</select>
-
-				<table class="table table-hover" id="myTable">
-					<tr style="background-color: gray" id="tableHeader">
-						<th>Dish Name</th>
-						<th>Cost</th>
-					</tr>
-					<tr>
-						<th>Total cost: </th>
-						<th id="totalMenuCost">SEK 0.00</th>
-					</tr>
-				</table>
-				<button type="button" class="myButton" style="margin:25%" id="confirmButton">Confirm Dinner</button>
-			</div>
-		</div>
-
-		<!--Filtering view-->
-		<div id = "filteringView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0;background:url('images/yellow-background.jpg')">
-		
-			<div style="margin-top:1%;margin-bottom:1%">
-				<div style="margin-left:2%"> <h2 style="font-family:Palatino">SELECT DISH</h2> </div>
-
-				<div class="side" style="width:300px;margin-left:2%">
-					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Enter Key Words" id="keyText"></input>
-						<span class="input-group-addon" id="searchButton" style="cursor:pointer; cursor: hand">search</span>
+			<!--My Dinner View-->
+			<div id = "myDinnerView" class="col-lg-2 col-md-2 col-xs-2" style="padding:0; border-right:solid 1px; height: 100%">
+				<div style="margin-left:5%">
+					<p style="margin:auto;text-align:center">My Dinner</p>
+					<div class="side">
+						<p style="width: 75px;margin-left:35px">People</p>
 					</div>
-				</div>
-
-				
-
-				<div class="side" >
-					<select name="myDropDown" style="width:150px;margin-left:50px" id="dropDown">
-						<option value="appetizer">Appetizer</option>
-						<option value="main course">Main course</option>
-						<option value="dessert">Dessert</option>
-						<option value="side dish">Side dish</option>
-						<option value="salad">Salad</option>
-						<option value="bread">Bread</option>
-						<option value="breakfast">Breakfast</option>
-						<option value="soup">Soup</option>
-						<option value="beverage">Beverage</option>
-						<option value="sauce">Sauce</option>
-						<option value="drink">Drink</option>
+					<select name="myDropDown" class="side" id="drop">
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
 					</select>
+
+					<table class="table table-hover" id="myTable">
+						<tr style="background-color: gray" id="tableHeader">
+							<th>Dish Name</th>
+							<th>Cost</th>
+						</tr>
+						<tr>
+							<th>Total cost: </th>
+							<th id="totalMenuCost">SEK 0.00</th>
+						</tr>
+					</table>
+					<button type="button" class="myButton" style="margin:25%" id="confirmButton">Confirm Dinner</button>
 				</div>
 			</div>
-		
-		</div>
 
-		<!--Dishes View-->
-		<div id="dishesView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0"></div>
+			<!--Filtering view-->
+			<div id = "filteringView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0;background:url('images/yellow-background.jpg')">
 
-		<!--Overview Header-->
-		<div id="overviewHeaderView" style="padding:0">
-			<div class="header" style="background-color: yellow; border-top:none;height:70px">
-				<div class="row">
-					<div class="col-lg-6 col-md-6 col-xs-6">
-						<h3 style="margin-left: 100px;margin-top: 20px;" id="headerText"></h3>
+				<div style="margin-top:1%;margin-bottom:1%">
+					<div style="margin-left:2%"> <h2 style="font-family:Palatino">SELECT DISH</h2> </div>
+
+					<div class="side" style="width:300px;margin-left:2%">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Enter Key Words" id="keyText"></input>
+							<span class="input-group-addon" id="searchButton" style="cursor:pointer; cursor: hand">search</span>
+						</div>
 					</div>
-					<div class="col-lg-6 col-md-6 col-xs-6">
-						<button class="myButton" style="margin-right:0;margin-left:60%;margin-top:20px;" id="backAndEditDinnerButton">Go back and edit dinner</button>
+
+					<div class="side" >
+						<select name="myDropDown" style="width:150px;margin-left:50px" id="dropDown">
+							<option value="appetizer">Appetizer</option>
+							<option value="main course">Main course</option>
+							<option value="dessert">Dessert</option>
+							<option value="side dish">Side dish</option>
+							<option value="salad">Salad</option>
+							<option value="bread">Bread</option>
+							<option value="breakfast">Breakfast</option>
+							<option value="soup">Soup</option>
+							<option value="beverage">Beverage</option>
+							<option value="sauce">Sauce</option>
+							<option value="drink">Drink</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+
+			<!--Dishes View-->
+			<div id="dishesView" class="col-lg-10 col-md-10 col-xs-10" style="padding:0"></div>
+
+			<!--Overview Header-->
+			<div id="overviewHeaderView" style="padding:0">
+				<div class="header" style="background-color: yellow; border-top:none;height:70px">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-xs-6">
+							<h3 style="margin-left: 100px;margin-top: 20px;" id="headerText"></h3>
+						</div>
+						<div class="col-lg-6 col-md-6 col-xs-6">
+							<button class="myButton" style="margin-right:0;margin-left:60%;margin-top:20px;" id="backAndEditDinnerButton">Go back and edit dinner</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<!--Dinner overview view-->
-		<div id="dinnerOverviewView" style="margin-top: 80px; margin-left: 320px">
-			<div class="side" style="margin-left: 30px">
-				<div id="totalCost">
+			<!--Dinner overview view-->
+			<div id="dinnerOverviewView" style="margin-top: 80px; margin-left: 320px">
+				<div class="side" style="margin-left: 30px">
+					<div id="totalCost">
+					</div>
 				</div>
-			</div>
-			<button class="myButton" style="margin-left:223px;margin-top:30px;width:140px" id="printFullRecipeButton">Print Full Recipe</button>
-		</div>
-
-		<!--Dinner Overview Preparation View-->
-		<div id="dinnerOverviewPreparationView" style="margin-top: 60px; margin-left: 30px"></div>
-
-
-		<!--Dish Detail View-->
-		<div id="dishDetailView">
-			<div class="col-lg-5 col-md-5 col-xs-5" style="padding:0;">
-				<button type="button" class="myButton"style="margin-top: 20px; margin-left:40px;margin-right:40px;background-color: #FF7F50;" id="back">Back and edit dinner</button>
-				<div style="margin-left: 40px; margin-top:20px; margin-right:40px">
-					<h1 id="dishName"></h1>
-					<img src="" style="width: 100%; height: 330px;">
-					<p class="normal" style="width: 100%; margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus magna nec laoreet dapibus.</p>
-					<h1>PREPARATION<h1>
-					<p class="normal" style="width: 100%;" id = "prepText"></p>
-				</div>
+				<button class="myButton" style="margin-left:223px;margin-top:30px;width:140px" id="printFullRecipeButton">Print Full Recipe</button>
 			</div>
 
+			<!--Dinner Overview Preparation View-->
+			<div id="dinnerOverviewPreparationView" style="margin-top: 60px; margin-left: 30px"></div>
 
 
+			<!--Dish Detail View-->
+			<div id="dishDetailView">
+				<div class="col-lg-5 col-md-5 col-xs-5" style="padding:0;">
+					<button type="button" class="myButton"style="margin-top: 20px; margin-left:40px;margin-right:40px;background-color: #FF7F50;" id="back">Back and edit dinner</button>
+					<div style="margin-left: 40px; margin-top:20px; margin-right:40px">
+						<h1 id="dishName"></h1>
+						<img src="" style="width: 100%; height: 330px;">
+						<p class="normal" style="width: 100%; margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus magna nec laoreet dapibus.</p>
+						<h1>PREPARATION<h1>
+						<p class="normal" style="width: 100%;" id = "prepText"></p>
+					</div>
+				</div>
 
 				<div class="col-lg-4 col-md-4 col-xs-4" style="padding:0;border-width: 1px;border:solid;border-color: black; margin-top:80px;margin-left:10px">
 					<div class="w3-container w3-pale-blue">
@@ -146,7 +141,12 @@
 							<p id="totalCost"></p>
 						</div>
 					</div>
-         </div>
+	      </div>
+			</div>
+
+			<!--Loading view-->
+			<div id="loadingView"></div>
+
 		</div>
 
 
@@ -168,6 +168,8 @@
 
 		<script src="js/view/dinnerOverviewView.js"></script>
 		<script src="js/view/dinnerOverviewPreparationView.js"></script>
+
+		<script src="js/view/loadingView.js"></script>
 
 		<script src="js/controller/pageViewController.js"></script>
 	</body>

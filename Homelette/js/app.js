@@ -19,6 +19,8 @@ $(function() {
 	var dinnerOverviewView = new DinnerOverviewView($("#dinnerOverviewView"), model);
 	var dinnerOverviewPreparationView = new DinnerOverviewPreparationView($("#dinnerOverviewPreparationView"), model);
 
+	var loadingView = new LoadingView($("#loadingView"), model);
+
 	var pageViewController = new PageViewController(
 		model,
 		dinnerOverviewPreparationView,
@@ -27,6 +29,7 @@ $(function() {
 		filteringView,
 		myDinnerView,
 		dishesView,
-		dishDetailView
+		dishDetailView,
+		loadingView
 	);
 });

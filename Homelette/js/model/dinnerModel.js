@@ -31,11 +31,12 @@ var DinnerModel = function() {
     return dishes.find(dish => dish.id == id);
   }
 
-  this.setSelectedDish = function(id) {
+  this.setSelectedDish = function(id, cb) {
     this.getExtendedDish(id, (dish) => {
       this.selectedDish = dish;
       this.notifyObservers({updates: ["selectedDish"]});
-    });
+      cb();
+    });  
   }
 
   //Returns the dish that is on the menu for selected type
