@@ -8,15 +8,22 @@ var DishDetailView = function (container, model) {
 	model.addObserver(this);
 
 	this.update = function(obj) {
-		if(obj == undefined || obj.updates.includes("selectedDish")) {
+		if(obj == undefined || obj.updates.includes("selectedDish") || obj.updates.includes("numberOfGuests")) {
 			container.find("#ingredientsTable tr").remove();
 
 			var dish = model.getSelectedDish();
 			var ingredients = dish.ingredients;
 
-			for (i = 0;i<ingredients.length;i++) {
-				container.find("#ingredientsTable").append("<tr><td>"+ingredients[i].quantity + " " + ingredients[i].unit +"</td><td>"+ingredients[i].name+"</td><td>SEK</td><td>"+ingredients[i].price+"</td></tr>");
-			}
+			ingredients.forEach(ingr => {
+				container.find("#ingredientsTable").append(
+					`<tr>
+						<td>${ingr.quantity * model.numberOfGuests} ${ingr.unit}</td>
+						<td>${ingr.name}</td>
+						<td>SEK</td>
+						<td>${ingr.price * model.numberOfGuests}</td>
+					</tr>`
+				);
+			})
 
 			container.find("#totalCost").html("Total Cost: "+model.getDishPrice(dish));
 			container.find("#dishName").html(dish.name);

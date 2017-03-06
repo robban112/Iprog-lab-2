@@ -1,8 +1,5 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
-
-  //TODO !DONE! Lab 2 implement the data structure that will hold number of guest
-  // and selected dinner options for dinner menu
   this.numberOfGuests = 0;
   this.dishesInMenu = [];
   this.observers = [];
@@ -11,7 +8,7 @@ var DinnerModel = function() {
   this.addObserver = function(observer) {
     this.observers.push(observer);
   }
-  
+
   this.notifyObservers = function(obj) {
     this.observers.forEach(o => o.update(obj));
   }
@@ -23,6 +20,11 @@ var DinnerModel = function() {
 
   this.getNumberOfGuests = function() {
     return this.numberOfGuests;
+  }
+
+  //function that returns a dish of specific ID
+  this.getDish = function (id) {
+    return dishes.find(dish => dish.id == id);
   }
 
   this.setSelectedDish = function(id) {
@@ -49,16 +51,19 @@ var DinnerModel = function() {
 
   //Returns the total price of the menu (all the ingredients multiplied by number of guests).
   this.getTotalMenuPrice = function() {
-    const priceOfIngredients = this.getAllIngredients()
-    .map(ingr=>ingr.price)
-    .reduce((a,b)=>a+b,0);
-    return this.numberOfGuests * priceOfIngredients;
+    return this.getPriceForIngredients(this.getAllIngredients());
   }
 
+  //Returns the price for a given dish
   this.getDishPrice = function(dish) {
-    const priceOfIngredients = dish.ingredients
+    return this.getPriceForIngredients(dish.ingredients);
+  }
+
+  //Returns the price for a set of ingredients
+  this.getPriceForIngredients = function(ingredients) {
+    const priceOfIngredients = ingredients
     .map(ingr=>ingr.price)
-    .reduce((a,b)=>a+b,0);
+    .reduce((a,b)=>a+b, 0);
     return this.numberOfGuests * priceOfIngredients;
   }
 
@@ -100,16 +105,6 @@ var DinnerModel = function() {
       return dish.type == type && found;
     });
   }
-
-  //function that returns a dish of specific ID
-  this.getDish = function (id) {
-    for(key in dishes){
-      if(dishes[key].id == id) {
-        return dishes[key];
-      }
-    }
-  }
-
 
   // the dishes variable contains an array of all the
   // dishes in the database. each dish has id, name, type,
