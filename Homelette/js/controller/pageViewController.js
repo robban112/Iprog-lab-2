@@ -43,19 +43,11 @@ var PageViewController = function (
 		dishesView.container.hide();
 		filteringView.container.hide();
 		loadingView.container.show();
-		const loadframe = $(`
-				<img class="loadFrame"
-						 src="images/spinner.gif"
-						 style="width:150px;height:150px">
-				</img>
-		`);
-		loadingView.container.append(loadframe);
-
 
 		const target = e.currentTarget;
 		model.setSelectedDish(target.id, function() {
 			dishDetailView.container.show();
-			loadingView.container.find(".loadFrame").remove();
+			loadingView.container.hide();
 		});
 	});
 

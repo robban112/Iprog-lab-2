@@ -7,10 +7,7 @@ var DishesView = function (container, model) {
 		const baseURI = this.model.recipeImagesBaseURI;
 		container.find(".dishSquare").remove();
 
-		const loadframe = $(`
-				<img class="loadFrame" src="images/spinner.gif" style="width:150px;height:150px"></img>
-		`);
-		container.append(loadframe);
+		$("#loadingView").show();
 
 		model.getAllDishes(type,filter,function(dishes) {
 			container.find(".loadFrame").remove();
@@ -31,6 +28,7 @@ var DishesView = function (container, model) {
 				`)
 				container.append(dishFrame);
 			}
+			$("#loadingView").hide();
 		});
 	}
 

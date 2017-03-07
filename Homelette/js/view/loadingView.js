@@ -1,5 +1,3 @@
-var LoadingView = function(container, model) {
+var LoadingView = function(container) {
   this.container = container;
-  this.model = model;
-  this.container.hide();
 }
